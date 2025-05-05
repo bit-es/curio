@@ -1,0 +1,51 @@
+{
+    "turtle": {
+        "brief":"This process describes the steps involved in baking a cake.",
+        "inputs": "The Raw Ingredients .... <br>Flour<br>Sugar<br>Eggs<br>Butter<br>Baking Powder<br>Milk<br>Vanilla Extract",
+        "whom": "Baker<br>Helpers (if any)",
+        "process": "Step 1: Preheat the oven to 350°F (175°C).<br>Step 2: Grease and flour the cake pans.<br>Step 3: In a bowl, mix flour and baking powder.<br>Step 4: In another bowl, cream butter and sugar until light and fluffy.<br>Step 5: Add eggs one at a time, beating well after each addition.<br>Step 6: Add vanilla extract.<br>Step 7: Gradually add the flour mixture, alternating with milk.<br>Step 8: Pour the batter into the prepared pans.<br>Step 9: Bake for 30-35 minutes or until a toothpick inserted into the center comes out clean.<br>Step 10: Let the cakes cool in the pans for 10 minutes, then turn out onto a wire rack to cool completely.",
+        "what": "Mixing Bowls<br>Measuring Cups and Spoons<br>Electric Mixer<br>Cake Pans<br>Oven<br>Cooling Rack",
+        "how": "Follow the recipe instructions carefully.<br>Use proper measuring techniques.<br>Ensure the oven is preheated to the correct temperature.<br>Check for doneness with a toothpick.",
+        "outputs": "Baked Cake Layers<br>Clean Kitchen",
+        "support": "Recipe Book<br>Online Baking Tutorials<br>Kitchen Timer<br>Oven Thermometer",
+        "results": "Delicious Cake<br>Happy Baker<br>Satisfied Guests"
+    },
+    "job_roles": [
+        {
+            "Role Name": "Process Improvement",
+            "Description": "Analyze and improve manufacturing processes.",
+            "Tags": [
+                "Engineer",
+                "IE",
+                "Analyst"
+            ]
+        },
+        {
+            "Role Name": "IT Management",
+            "Description": "Oversee the IT department and manage IT projects.",
+            "Tags": [
+                "IT",
+                "Manager",
+                "PM"
+            ]
+        },
+        {
+            "Role Name": "Operations Oversight",
+            "Description": "Oversee daily operations and manage staff.",
+            "Tags": [
+                "Operations",
+                "Manager",
+                "Approver"
+            ]
+        },
+        {
+            "Role Name": "Marketing Campaigns",
+            "Description": "Plan and execute marketing campaigns.",
+            "Tags": [
+                "Marketing",
+                "Manager",
+                "Strategist"
+            ]
+        }
+    ]
+}
