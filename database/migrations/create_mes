@@ -1,0 +1,76 @@
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void
+    {
+        // === JOB POSTS ===
+        Schema::create('job_posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('description')->nullable();
+            $table->timestamps();
+        });
+
+        // === JOB POST ATTRIBUTES (polymorphic) ===
+        Schema::create('job_post_attributes', function (Blueprint $table) {
+            $table->id();
+            $table->morphs('attributable'); // typically job_post
+            $table->string('key');
+            $table->text('value')->nullable();
+            $table->timestamps();
+            $table->unique(['attributable_id', 'attributable_type', 'key']);
+        });
+
+        // === STAFF ATTRIBUTES (privileged, polymorphic) ===
+        Schema::create('staff_attributes', function (Blueprint $table) {
+            $table->id();
+            $table->morphs('attributable'); // typically user
+            $table->string('key');
+            $table->text('value')->nullable();
+            $table->timestamps();
+            $table->unique(['attributable_id', 'attributable_type', 'key']);
+        });
+
+        // === GENERAL USER ATTRIBUTES (polymorphic) ===
+        Schema::create('attributes', function (Blueprint $table) {
+            $table->id();
+            $table->morphs('attributable'); // typically user
+            $table->string('key');
+            $table->text('value')->nullable();
+            $table->timestamps();
+            $table->unique(['attributable_id', 'attributable_type', 'key']);
+        });
+
+        // === QUALIFICATION TEST SPECIFICATIONS ===
+        Schema::create('qualification_test_specifications', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->unique();
+            $table->string('description')->nullable();
+            $table->json('criteria')->nullable(); // JSON rules or expectations
+            $table->timestamps();
+        });
+
+        // === QUALIFICATION TEST RESULTS ===
+        Schema::create('qualification_test_results', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('qualification_test_specification_id')->constrained()->onDelete('cascade');
+            $table->string('result'); // Pass / Fail / Pending
+            $table->date('test_date');
+            $table->date('expiry_date')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('qualification_test_results');
+        Schema::dropIfExists('qualification_test_specifications');
+        Schema::dropIfExists('attributes');
+        Schema::dropIfExists('staff_attributes');
+        Schema::dropIfExists('job_post_attributes');
+        Schema::dropIfExists('job_posts');
+    }
+};
