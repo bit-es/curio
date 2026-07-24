@@ -2,8 +2,8 @@
 | Surah / Verse Part | Arabic | Rumi | English |
 | :--- | :--- | :--- | :--- |
 | **1. SURAH AL-ASR** | | | |
-| Verse 1 | وَالْعَصْرِ | Wal-'ashr | By time, |
-| Verse 2 | إِنَّ الْإِنسَانَ | Innal-insaana | indeed, mankind |
+| Verse 1 | # وَالْعَصْرِ | Wal-'ashr | By time, |
+| Verse 2 | # إِنَّ الْإِنسَانَ | Innal-insaana | indeed, mankind |
 | | لَفِي خُسْرٍ | lafii khusr | is in loss, |
 | Verse 3 | إِلَّا الَّذِينَ آمَنُوا | Illal-ladziina aamanuu | except for those who have believed |
 | | وَعَمِلُوا الصَّالِحَاتِ | wa 'amilush-shoolihaati | and done righteous deeds |
