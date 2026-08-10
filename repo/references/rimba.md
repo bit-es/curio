@@ -118,9 +118,8 @@ graph TD
     Rimba --> Common
     
     %% Architectural Tier Progression
-    Core --> Governance
-    Governance --> Operations
-    Governance --> Common
+    Core --> AddOns
+    Governance --> AddOns
     Operations --> AddOns
     Common --> AddOns
 
