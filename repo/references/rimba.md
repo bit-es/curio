@@ -61,61 +61,89 @@ Instead of building every system independently, Rimba provides a **shared enterp
 
 ```mermaid
 graph TD
-    %% Core Platform
-    Rimba[RIMBA<br/>Digital Manufacturing Platform]
-    
-    %% Tier 1: Pillars
-    People[PEOPLE]
-    Org[ORGANIZATION]
-    Assets[ASSETS]
-    
-    %% Tier 2: Core Components
-    Work[WORK]
-    Workflow[WORKFLOW]
-    Docs[DOCUMENTS]
-    
-    %% Tier 3: Outputs
-    Services[SERVICES]
-    Agreements[AGREEMENTS]
-    Knowledge[KNOWLEDGE]
-    
-    %% Tier 4: Extensions
-    AddOns[BUSINESS ADD-ONS]
-    
-    %% Tier 5: Modules
-    HRM[HRM]
-    DMS[DMS]
-    LMS[LMS]
-    EAM[EAM]
-    TOS[TOS]
+    %% Main Platform Hub
+    Rimba["RIMBA<br/>Digital Manufacturing Platform"]
 
-    %% Connections
-    Rimba --- People
-    Rimba --- Org
-    Rimba --- Assets
-    
-    People --- Work
-    Org --- Workflow
-    Assets --- Docs
-    
-    Work --- Services
-    Workflow --- Agreements
-    Docs --- Knowledge
-    
-    Services --- AddOns
-    Agreements --- AddOns
-    Knowledge --- AddOns
-    
-    AddOns --- HRM
-    AddOns --- DMS
-    AddOns --- LMS
-    AddOns --- EAM
-    AddOns --- TOS
+    %% Core System Infrastructure Layer
+    subgraph Core ["1. Core System & Infrastructure Layer"]
+        Asas["Base Package<br/>[rimba/asas]"]
+        Bantu["Helpfile Package<br/>[rimba/bantu]"]
+        Citra["Branding Package<br/>[rimba/citra]"]
+        Jejak["Trail Package<br/>[rimba/jejak]"]
+        Sifat["Attributing Package<br/>[rimba/sifat]"]
+        Tutur["Translate Package<br/>[rimba/tutur]"]
+        Versi["Versioning Package<br/>[rimba/versi]"]
+    end
 
-    %% Styling for better readability
-    style Rimba fill:#f9f,stroke:#333,stroke-width:2px
-    style AddOns fill:#bbf,stroke:#333,stroke-width:2px
+    %% Identity, Auth, & Structure Layer
+    subgraph Governance ["2. Identity, Auth & Organization Structure"]
+        Siapa["Who Package<br/>[rimba/siapa]"]
+        Boleh["Can Package<br/>[rimba/boleh]"]
+        Pihak["Organization Package<br/>[rimba/pihak]"]
+        Jawat["Position Package<br/>[rimba/jawat]"]
+        Orang["People Package<br/>[rimba/orang]"]
+    end
+
+    %% Operations, Process & Lifecycle Layer
+    subgraph Operations ["3. Operations, Process & Lifecycle"]
+        Jalan["Flow Package<br/>[rimba/jalan]"]
+        Kerja["Work Package<br/>[rimba/kerja]"]
+        Janji["Agreement Package<br/>[rimba/janji]"]
+    end
+
+    %% Common Features Layer
+    subgraph Common ["3. Common Features"]
+        Pelan["Floorplan Package<br/>[rimba/pelan]"]
+        Jalur["Menu Package<br/>[rimba/jalur]"]
+        Waktu["Time Package<br/>[rimba/waktu]"]
+        Laras["Sync Package<br/>[rimba/laras]"]
+    end
+
+    %% Business Add-ons Tier
+    subgraph AddOns ["4. Business Add-on Extension Tier"]
+        Ldap["Ldap Package<br/>[rimba/ldap]"]
+        Idp["Idp Package<br/>[rimba/idp]"]
+        Dms["Dms Package<br/>[rimba/dms]"]
+        Lms["Lms Package<br/>[rimba/lms]"]
+        Hrm["Hrm Package<br/>[rimba/hrm]"]
+        Tos["Tos Package<br/>[rimba/tos]"]
+        Lcs["Lcs Package<br/>[rimba/lcs]"]
+        Eam["Eam Package<br/>[rimba/eam]"]
+    end
+
+    %% High-level Architecture Flow Connections
+    Rimba --> Core
+    Rimba --> Governance
+    Rimba --> Operations
+    Rimba --> Common
+    
+    %% Architectural Tier Progression
+    Core --> Governance
+    Governance --> Operations
+    Governance --> Common
+    Operations --> AddOns
+    Common --> AddOns
+
+    %% Explicit Internal Logic Connections
+    Siapa --> Boleh
+    Siapa -.-> Ldap
+    Siapa -.-> Idp
+    
+    Pihak --> Jawat
+    Jawat --> Orang
+    
+    Jalan --> Kerja
+    Janji -.-> Lcs
+
+    %% Visual Styling for GitHub Compatibility
+    style Rimba fill:#238636,stroke:#333,stroke-width:2px,color:#fff
+    style Core fill:#1c1c1e,stroke:#3a3a3c,stroke-width:1px
+    style Governance fill:#1c1c1e,stroke:#3a3a3c,stroke-width:1px
+    style Operations fill:#1c1c1e,stroke:#3a3a3c,stroke-width:1px
+    style Common fill:#1c1c1e,stroke:#3a3a3c,stroke-width:1px
+    style AddOns fill:#1f6feb,stroke:#3a3a3c,stroke-width:1px,color:#fff
 ```
+
 
 ---
 
