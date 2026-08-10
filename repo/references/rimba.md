@@ -67,12 +67,9 @@ graph TD
     %% Core System Infrastructure Layer
     subgraph Core ["1. Core System & Infrastructure Layer"]
         Asas["Base"]
-        Bantu["Helpfile"]
         Citra["Branding"]
-        Jejak["Trail"]
-        Sifat["Attributing"]
+        Bantu["Helpfile"]
         Tutur["Translate"]
-        Versi["Versioning"]
     end
 
     %% Identity, Auth, & Structure Layer
@@ -89,6 +86,9 @@ graph TD
         Jalan["Flow"]
         Kerja["Work"]
         Janji["Agreement"]
+        Jejak["Trail"]
+        Sifat["Attributing"]
+        Versi["Versioning"]
     end
 
     %% Common Features Layer
