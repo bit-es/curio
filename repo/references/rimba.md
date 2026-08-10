@@ -58,31 +58,63 @@ And information about the same person, asset, organization, or process can exist
 
 Instead of building every system independently, Rimba provides a **shared enterprise foundation**.
 
-```text
-                         RIMBA
-              Digital Manufacturing Platform
-                         │
-        ┌────────────────┼────────────────┐
-        │                │                │
-      PEOPLE         ORGANIZATION       ASSETS
-        │                │                │
-        ├────────────────┼────────────────┤
-        │                │                │
-      WORK            WORKFLOW          DOCUMENTS
-        │                │                │
-        ├────────────────┼────────────────┤
-        │                │                │
-      SERVICES        AGREEMENTS        KNOWLEDGE
-        │                │                │
-        └────────────────┼────────────────┘
-                         │
-                  BUSINESS ADD-ONS
-                         │
-       ┌─────────┬───────┼───────┬─────────┐
-       │         │       │       │         │
-      HRM       DMS     LMS     EAM       TOS
-       │         │       │       │         │
-       └─────────┴───────┴───────┴─────────┘
+
+```mermaid
+graph TD
+    %% Core Platform
+    Rimba[RIMBA<br/>Digital Manufacturing Platform]
+    
+    %% Tier 1: Pillars
+    People[PEOPLE]
+    Org[ORGANIZATION]
+    Assets[ASSETS]
+    
+    %% Tier 2: Core Components
+    Work[WORK]
+    Workflow[WORKFLOW]
+    Docs[DOCUMENTS]
+    
+    %% Tier 3: Outputs
+    Services[SERVICES]
+    Agreements[AGREEMENTS]
+    Knowledge[KNOWLEDGE]
+    
+    %% Tier 4: Extensions
+    AddOns[BUSINESS ADD-ONS]
+    
+    %% Tier 5: Modules
+    HRM[HRM]
+    DMS[DMS]
+    LMS[LMS]
+    EAM[EAM]
+    TOS[TOS]
+
+    %% Connections
+    Rimba --- People
+    Rimba --- Org
+    Rimba --- Assets
+    
+    People --- Work
+    Org --- Workflow
+    Assets --- Docs
+    
+    Work --- Services
+    Workflow --- Agreements
+    Docs --- Knowledge
+    
+    Services --- AddOns
+    Agreements --- AddOns
+    Knowledge --- AddOns
+    
+    AddOns --- HRM
+    AddOns --- DMS
+    AddOns --- LMS
+    AddOns --- EAM
+    AddOns --- TOS
+
+    %% Styling for better readability
+    style Rimba fill:#f9f,stroke:#333,stroke-width:2px
+    style AddOns fill:#bbf,stroke:#333,stroke-width:2px
 ```
 
 ---
