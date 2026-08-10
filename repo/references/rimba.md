@@ -66,49 +66,49 @@ graph TD
 
     %% Core System Infrastructure Layer
     subgraph Core ["1. Core System & Infrastructure Layer"]
-        Asas["Base Package<br/>[rimba/asas]"]
-        Bantu["Helpfile Package<br/>[rimba/bantu]"]
-        Citra["Branding Package<br/>[rimba/citra]"]
-        Jejak["Trail Package<br/>[rimba/jejak]"]
-        Sifat["Attributing Package<br/>[rimba/sifat]"]
-        Tutur["Translate Package<br/>[rimba/tutur]"]
-        Versi["Versioning Package<br/>[rimba/versi]"]
+        Asas["Base"]
+        Bantu["Helpfile"]
+        Citra["Branding"]
+        Jejak["Trail"]
+        Sifat["Attributing"]
+        Tutur["Translate"]
+        Versi["Versioning"]
     end
 
     %% Identity, Auth, & Structure Layer
     subgraph Governance ["2. Identity, Auth & Organization Structure"]
-        Siapa["Who Package<br/>[rimba/siapa]"]
-        Boleh["Can Package<br/>[rimba/boleh]"]
-        Pihak["Organization Package<br/>[rimba/pihak]"]
-        Jawat["Position Package<br/>[rimba/jawat]"]
-        Orang["People Package<br/>[rimba/orang]"]
+        Siapa["Who"]
+        Boleh["Can"]
+        Pihak["Organization"]
+        Jawat["Position"]
+        Orang["People"]
     end
 
     %% Operations, Process & Lifecycle Layer
     subgraph Operations ["3. Operations, Process & Lifecycle"]
-        Jalan["Flow Package<br/>[rimba/jalan]"]
-        Kerja["Work Package<br/>[rimba/kerja]"]
-        Janji["Agreement Package<br/>[rimba/janji]"]
+        Jalan["Flow"]
+        Kerja["Work"]
+        Janji["Agreement"]
     end
 
     %% Common Features Layer
     subgraph Common ["3. Common Features"]
-        Pelan["Floorplan Package<br/>[rimba/pelan]"]
-        Jalur["Menu Package<br/>[rimba/jalur]"]
-        Waktu["Time Package<br/>[rimba/waktu]"]
-        Laras["Sync Package<br/>[rimba/laras]"]
+        Pelan["Floorplan"]
+        Jalur["Menu"]
+        Waktu["Time"]
+        Laras["Sync"]
     end
 
     %% Business Add-ons Tier
     subgraph AddOns ["4. Business Add-on Extension Tier"]
-        Ldap["Ldap Package<br/>[rimba/ldap]"]
-        Idp["Idp Package<br/>[rimba/idp]"]
-        Dms["Dms Package<br/>[rimba/dms]"]
-        Lms["Lms Package<br/>[rimba/lms]"]
-        Hrm["Hrm Package<br/>[rimba/hrm]"]
-        Tos["Tos Package<br/>[rimba/tos]"]
-        Lcs["Lcs Package<br/>[rimba/lcs]"]
-        Eam["Eam Package<br/>[rimba/eam]"]
+        Ldap["Ldap"]
+        Idp["Idp"]
+        Dms["Dms"]
+        Lms["Lms"]
+        Hrm["Hrm"]
+        Tos["Tos"]
+        Lcs["Lcs"]
+        Eam["Eam"]
     end
 
     %% High-level Architecture Flow Connections
@@ -122,12 +122,6 @@ graph TD
     Governance --> AddOns
     Operations --> AddOns
     Common --> AddOns
-
-    AddOns --- HRM
-    AddOns --- DMS
-    AddOns --- LMS
-    AddOns --- EAM
-    AddOns --- TOS
 
     %% Visual Styling for GitHub Compatibility
     style Rimba fill:#238636,stroke:#333,stroke-width:2px,color:#fff
