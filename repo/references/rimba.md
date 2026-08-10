@@ -124,17 +124,6 @@ graph TD
     Operations --> AddOns
     Common --> AddOns
 
-    %% Explicit Internal Logic Connections
-    Siapa --> Boleh
-    Siapa -.-> Ldap
-    Siapa -.-> Idp
-    
-    Pihak --> Jawat
-    Jawat --> Orang
-    
-    Jalan --> Kerja
-    Janji -.-> Lcs
-
     %% Visual Styling for GitHub Compatibility
     style Rimba fill:#238636,stroke:#333,stroke-width:2px,color:#fff
     style Core fill:#1c1c1e,stroke:#3a3a3c,stroke-width:1px
